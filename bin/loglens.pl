@@ -2,24 +2,9 @@
 use strict;
 use warnings;
 
-# --- A Subroutine: Reuseable Block of Logic ---
-sub classify_line {
-    my ($line) = @_;    # unpack the argument
-
-    # match a log level anywhere in the line
-    # \b = word boundary; () = capture group; i = case-insensitive
-    my $level = "UNKNOWN";
-    if ($line =~ /\b(INFO|WARN|ERROR|DEBUG|FATAL)\b/i) {
-        $level = uc($1);  # $1 = first captured group; uc() = uppercase
-    }
-
-    my $timestamp = "NO_TIMESTAMP";
-    if ($line =~ /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})/) {
-        $timestamp = $1;
-    }
-
-    return ($level, $timestamp);
-}
+use FindBin;                        # figures out where THIS script lives
+use lib "$FindBin::Bin/../lib";     # add ../lib to the module search path
+use LogLens qw(classify_line);      # import the function
 
 # --- Get the filename from the command line ---
 my $filename = shift @ARGV
