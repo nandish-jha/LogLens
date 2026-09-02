@@ -1,11 +1,18 @@
-# LogLens — A Perl Log Analysis CLI Tool
+# LogLens 🔍
 
-A lightweight command-line tool for parsing log files and summarizing
-log-level activity (INFO, WARN, ERROR, DEBUG, FATAL).
+A lightweight command-line log analysis tool written in Perl. It parses
+log files, detects severity levels, and produces a clean summary report.
+
+## Features
+
+- Detects standard log levels: **INFO, WARN, ERROR, DEBUG, FATAL**
+- Case-insensitive, word-boundary-aware matching
+- Extracts ISO-style timestamps (`YYYY-MM-DD HH:MM:SS`)
+- Handles malformed lines gracefully (`UNKNOWN` / `NO_TIMESTAMP`)
+- Modular design with a reusable `LogLens` module
+- Automated test suite (`Test::More`)
 
 ## Usage
-    perl bin/loglens.pl <logfile>
 
-## Status
-🚧 In active development — learning project demonstrating Perl fundamentals,
-regex-based parsing, and CLI design.
+```bash
+perl bin/loglens.pl <logfile>
