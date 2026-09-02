@@ -25,3 +25,45 @@ sub classify_line {
 }
 
 1;  # A module MUST end with a true value
+
+__END__
+
+=head1 NAME
+
+LogLens - Parse and classify log file lines by severity level
+
+=head1 SYNOPSIS
+
+    use LogLens qw(classify_line);
+
+    my ($level, $timestamp) = classify_line($line);
+
+=head1 DESCRIPTION
+
+LogLens provides utilities for analyzing plain-text log files. It detects
+standard severity levels (INFO, WARN, ERROR, DEBUG, FATAL) and extracts
+ISO-style timestamps from log lines.
+
+=head1 FUNCTIONS
+
+=head2 classify_line($line)
+
+Takes a single log line as a string. Returns a two-element list:
+C<($level, $timestamp)>.
+
+=over 4
+
+=item * B<$level> - one of INFO, WARN, ERROR, DEBUG, FATAL (uppercased),
+or "UNKNOWN" if no level is found. Matching is case-insensitive and uses
+word boundaries.
+
+=item * B<$timestamp> - the leading C<YYYY-MM-DD HH:MM:SS> timestamp,
+or "NO_TIMESTAMP" if none is present.
+
+=back
+
+=head1 AUTHOR
+
+Nandish Jha
+
+=cut
