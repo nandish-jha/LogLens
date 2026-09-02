@@ -1,0 +1,11 @@
+2026-08-24 03:14:01 INFO  Server started on port 8080
+2026-08-24 03:14:05 INFO  User alice logged in from 192.168.1.10
+2026-08-24 03:15:12 WARN  High memory usage: 82%
+2026-08-24 03:16:03 ERROR Failed to connect to database
+2026-08-24 03:16:04 ERROR Retry 1 of 3 failed
+2026-08-24 03:16:05 ERROR Retry 2 of 3 failed
+2026-08-24 03:17:00 INFO  User bob logged in from 10.0.0.42
+2026-08-24 03:18:30 DEBUG Cache miss for key=session_991
+2026-08-24 03:19:00 WARN  Disk usage at 90%
+2026-08-24 03:20:15 FATAL Out of memory - shutting down
+this line has no timestamp and no level
