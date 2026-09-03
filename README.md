@@ -19,6 +19,7 @@ produces clean summary reports — including frequency-ranked error analysis.
 
 ```bash
 perl bin/loglens.pl [options] <logfile>
+```
 
 | Option          | Description |
 | --verbose       | Print each line as it is classified |
