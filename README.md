@@ -20,7 +20,7 @@ produces clean summary reports — including frequency-ranked error analysis.
 ```bash
 perl bin/loglens.pl [options] <logfile>
 
-Options:
-    --verbose       Print each line as it is classified
-    --top-errors=N  Show the N most frequent ERROR messages
-    --help          Show this help message
+| Option          | Description |
+| --verbose       | Print each line as it is classified |
+| --top-errors=N  | Show the N most frequent ERROR messages |
+| --help          | Show this help message |
