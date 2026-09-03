@@ -21,7 +21,9 @@ produces clean summary reports — including frequency-ranked error analysis.
 perl bin/loglens.pl [options] <logfile>
 ```
 
-| Option          | Description |
-| --verbose       | Print each line as it is classified |
-| --top-errors=N  | Show the N most frequent ERROR messages |
-| --help          | Show this help message |
+## Options
+| Option | Description |
+| :--- | :--- |
+| --verbose | Print each line as it is classified |
+| --top-errors=N | Show the N most frequent ERROR messages |
+| --help | Show this help message |
