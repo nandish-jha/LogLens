@@ -5,7 +5,7 @@ use warnings;
 use Exporter 'import';
 
 # Functions other files may import by name
-our @EXPORT_OK = qw(classify_line);
+our @EXPORT_OK = qw(classify_line extract_message);
 
 # --- Classify a single log line: returns (level, timestamp) ---
 sub classify_line {
@@ -22,6 +22,18 @@ sub classify_line {
     }
 
     return ($level, $timestamp);
+}
+
+# --- Return the message part of a line (everything after the level) ---
+sub extract_message {
+    my ($line) = @_;
+
+    # strip leading timestamp and level, keep the rest as the "message"
+    if ($line =~ /\b(?:INFO|WARN|ERROR|DEBUG|FATAL)\b\s*(.*)$/i) {
+        return $1;
+    }
+
+    return $line;   # fallback: whole line
 }
 
 1;  # A module MUST end with a true value
